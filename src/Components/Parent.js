@@ -36,6 +36,7 @@ class Parent extends Component {
         this.state = {slideCounter: 0};
         this.nextSlide = this.nextSlide.bind(this);
         this.prevSlide = this.prevSlide.bind(this);
+        this.handleKey = this.handleKey.bind(this);
         this.maxSlides = 15;
     }
 
@@ -53,9 +54,19 @@ class Parent extends Component {
         }
     }
 
+    handleKey(e) {
+        if(e.keyCode == 39) {
+            console.log("right arrow");
+            this.nextSlide();
+        }
+        else if(e.keyCode == 40) {
+            this.prevSlide();
+        }
+    }
+
     render() {
         return(
-            <Total>
+            <Total onKeyDown={this.handleKey} >
             <Wrapper>
                 <Left onClick={this.prevSlide} >
                     {this.state.slideCounter}
