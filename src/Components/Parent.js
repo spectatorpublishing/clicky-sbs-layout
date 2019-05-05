@@ -1,7 +1,45 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import Slide from './Slide.js';
 import Bar from './Bar.js';
+import PictureImage from './PictureImage';
+import TitleText from './TitleText';
+import TextPage1 from './TextPage1';
+import TextPage2 from './TextPage2';
+
+const Slides= [
+    {
+        element: <TitleText image="https://s3.amazonaws.com/spec-imagehosting/mm/SQUAAAA.png" title="What could you fit in 64 ft"/>,
+        color: "linear-gradient(#99DDDE,#FFFFFF)"
+    },
+    {
+        element: <TextPage1 image="https://s3.amazonaws.com/spec-imagehosting/mm/floornowalls.png" text1="Four by four by four..."/>,
+        color: "linear-gradient(#99DDDE,#FFFFFF)"
+    },
+    {
+        element: <TextPage1 image="https://s3.amazonaws.com/spec-imagehosting/mm/empty+room.png" text1="Four by four by four..." text2="64 cubic feet..."/>,
+        color: "linear-gradient(#99DDDE,#FFFFFF)"
+    },
+    {
+        element: <TextPage2 text1="So why do we bring up 64 cubic feet?"/>,
+        color: "linear-gradient(#004D8C,#004D8C)"
+    },
+    {
+        element: <TextPage2 text1="So why do we bring up 64 cubic feet?" text2="Seems random, huh?"/>,
+        color: "linear-gradient(#004D8C,#004D8C)"
+    },
+    {
+        element: <PictureImage image="https://s3.amazonaws.com/spec-imagehosting/mm/dice1.png" number="" text=""/>,
+        color: "linear-gradient(#eff9f9,#eff9f9)"
+    },
+    {
+        element: <PictureImage image="https://s3.amazonaws.com/spec-imagehosting/mm/dice2.png" number="115,989" text=""/>,
+        color: "linear-gradient(#cceeee,#cceeee)"
+    },
+    {
+        element: <PictureImage image="https://s3.amazonaws.com/spec-imagehosting/mm/dice3.png" number="115,989" text="dice"/>,
+        color: "linear-gradient(#99DDDE,#99ddde)"
+    }
+]
 
 const Total = styled.div`
     top:0;
@@ -17,7 +55,9 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     height: 98%;
+    background-image: ${props => props.color};
 `
+
 const Left = styled.div`
     width: 50%;
     height: 100%;
@@ -37,7 +77,7 @@ class Parent extends Component {
         this.nextSlide = this.nextSlide.bind(this);
         this.prevSlide = this.prevSlide.bind(this);
         this.handleKey = this.handleKey.bind(this);
-        this.maxSlides = 15;
+        this.maxSlides = 34;
     }
 
     nextSlide = () => {
@@ -55,11 +95,11 @@ class Parent extends Component {
     }
 
     handleKey(e) {
-        if(e.keyCode == 39) {
+        if(e.keyCode === 39) {
             console.log("right arrow");
             this.nextSlide();
         }
-        else if(e.keyCode == 40) {
+        else if(e.keyCode === 40) {
             this.prevSlide();
         }
     }
@@ -67,16 +107,12 @@ class Parent extends Component {
     render() {
         return(
             <Total onKeyDown={this.handleKey} >
-            <Wrapper>
-                <Left onClick={this.prevSlide} >
-                    {this.state.slideCounter}
-                </Left>
-
-                <Right onClick={this.nextSlide} >
-                    {this.state.slideCounter}
-                </Right>
+            <Wrapper color={Slides[this.state.slideCounter].color}>
+                <Left onClick={this.prevSlide}/>
+                <Right onClick={this.nextSlide}/>
             </Wrapper>
-            <Bar width={this.state.slideCounter*10}/>
+            {Slides[this.state.slideCounter].element}
+            <Bar width={this.state.slideCounter*(100/34)}/>
             </Total>
         );
     }

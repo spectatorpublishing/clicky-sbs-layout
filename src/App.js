@@ -1,13 +1,17 @@
 import React from 'react';
-import './App.css';
-import Bar from './Components/Bar.js'
 import Parent from './Components/Parent.js'
+import styled from 'styled-components';
+
+const Main = styled.div`
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,700i');
+font-family: Raleway, sans-serif;
+`
 
 function App() {
   return (
-    <div>
+    <Main>
       <Parent/>
-    </div>
+    </Main>
   );
 }
 

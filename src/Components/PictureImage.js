@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `
 
 const Left = styled.div`
-    width: 60%;
+    width: 52%;
     height: 100%;
     z-index: 5;
     @media (max-width: 700px) {
@@ -23,7 +23,7 @@ const Left = styled.div`
 `
 
 const Right = styled.div`
-    width: 40%;
+    width: 48%;
     height: 100%;
     z-index: 5;
     @media (max-width: 700px) {
@@ -34,7 +34,7 @@ const Right = styled.div`
 `
 
 const Image = styled.img`
-    width: 80%;
+    width: 90%;
     margin-left: 10%;
     display: block;
     position: relative;
@@ -43,7 +43,7 @@ const Image = styled.img`
     @media (max-width: 700px) {
         width: 100%;
         margin: 0;
-        top: 40%;
+        top: 70%;
     }
 `
 
@@ -59,30 +59,48 @@ const Text = styled.div`
 const UpperText = styled.div`
     display: block;
     width: 100%;
-    font-size: 8rem;
+    font-size: 14rem;
+    height: 14rem;
     font-family: "Raleway";
     text-align: center;
-    color: #004D8C;
+    color: white;
     @media (max-width: 700px) {
         font-size: 4rem;
+        height: 4rem;
     }
 `
 
-class TitleText extends Component {
+const LowerText = styled.div`
+    margin-top: 5%;
+    display: block;
+    width: 100%;
+    font-size: 8rem;
+    height: 8rem;
+    font-family: "Raleway";
+    text-align: center;
+    color: white;
+    @media (max-width: 700px) {
+        font-size: 2rem;
+        height: 2rem;
+    }
+`
+
+class PictureImage extends Component {
     render(){
         return(
             <Wrapper>
                 <Left>
-                    <Text>
-                    <UpperText>{this.props.title}<sup>3</sup>?</UpperText>
-                    </Text>
+                    <Image src={this.props.image}/>
                 </Left>
                 <Right>
-                    <Image src={this.props.image}/>
+                    <Text>
+                    <UpperText>{this.props.number}</UpperText>
+                    <LowerText>{this.props.text}</LowerText>
+                    </Text>
                 </Right>
             </Wrapper>
         )
     }
 }
 
-export default TitleText;
+export default PictureImage;

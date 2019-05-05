@@ -11,17 +11,21 @@ const Position = styled.div`
     width: 60%;
     height: 15rem;
     text-align:center;
+    font-size: 4rem;
+    @media (max-width: 700px) {
+        font-size: 2rem;
+        width: 90%;
+    }
+`
+const Larger = styled.div`
     font-size: 6rem;
     @media (max-width: 700px) {
         font-size: 3rem;
-        width: 90%;
     }
 `
 const TextDiv=styled.div`
     display:inline;
-    font-weight:700;
-    background-color:white;
-    color:#004D8C;
+    color:white;
 `
 const Image = styled.img`
     width: 50%;
@@ -41,7 +45,7 @@ class TextPage1 extends Component{
         return(
             <div>
                 <Image src={this.props.image}/>
-                <Position><TextDiv>{this.props.text1}<br/>{this.props.text2}</TextDiv></Position>
+                <Position><TextDiv><i>{this.props.text1}</i><br/><Larger><i>{this.props.text2}</i></Larger></TextDiv></Position>
             </div>
         )
     }
