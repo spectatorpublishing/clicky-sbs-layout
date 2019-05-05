@@ -1,9 +1,13 @@
 import React from 'react';
 import './App.css';
 import Bar from './Components/Bar.js'
+import Parent from './Components/Parent.js'
+
 function App() {
   return (
-    <Bar width={20}/>
+    <div>
+      <Parent/>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const BackBar=styled.div`
     background-color: grey;
     vertical-align: bottom;
-    height:1.5vh;
+    height:2%;
     width:100%;
     position:fixed;
     bottom:0
@@ -12,7 +12,7 @@ const BackBar=styled.div`
 const ProgressBar=styled.div`
     background-color: yellow;
     vertical-align: bottom;
-    height:1.5vh;
+    height:2%;
     width:${props => props.width}vw;
     position:fixed;
     bottom:0;
