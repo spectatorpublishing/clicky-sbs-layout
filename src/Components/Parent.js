@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import Slide from './Slide.js';
 import Bar from './Bar.js';
+import HighlightText from './HighlightText.js';
 
 const Total = styled.div`
     top:0;
@@ -67,6 +68,9 @@ class Parent extends Component {
     render() {
         return(
             <Total onKeyDown={this.handleKey} >
+
+            <HighlightText/>
+            
             <Wrapper>
                 <Left onClick={this.prevSlide} >
                     {this.state.slideCounter}
