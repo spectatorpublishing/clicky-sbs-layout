@@ -8,8 +8,8 @@ const Position = styled.div`
     right: 0;
     bottom: 0;
     left: 0;
-    width: 99.519vh;
-    height: 100px;
+    width: 55rem;
+    height: 15rem;
     text-align:center;
 `
 const TextDiv=styled.div`
@@ -18,13 +18,12 @@ const TextDiv=styled.div`
     background-color:white;
     color:#004D8C;
     font-size: 10vh;
-    filter: ${props =>  props.invert ? 'invert(100%)' : 'invert(0%)'};
 `
 
 class TextPage1 extends Component{
     render(){
         return(
-        <Position><TextDiv invert={this.props.invert}>{this.props.text}</TextDiv></Position>
+        <Position><TextDiv>{this.props.text1}<br/>{this.props.text2}</TextDiv></Position>
         )
     }
 }
