@@ -30,9 +30,7 @@ class Bar extends Component{
     render(){
         return(
             <Div>
-            this
             <BackBar/><ProgressBar width={this.props.width}/>
-            this!
             </Div>
         );
     }
