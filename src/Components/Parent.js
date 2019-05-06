@@ -192,33 +192,58 @@ class Parent extends Component {
         this.prevSlide = this.prevSlide.bind(this);
         this.handleKey = this.handleKey.bind(this);
         this.maxSlides = 33;
+        this.preloaded = []
+        this.preload = this.preload.bind(this)
+    }
+
+    componentDidMount() {
+        this.preload(0)
     }
 
     preload(i){
-        if (i > 1 && !Slides[i - 1].preloaded && Slides[i-1].image) {
-            let img = new Image()
-            img.src = Slides[i - 1].image
-            Slides[i - 1].preloaded = true
+        let images = [
+            "https://s3.amazonaws.com/spec-imagehosting/mm/SQUAAAA.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/floornowalls.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/empty+room.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/empty+room.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/dice1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/dice2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/dice3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cupcakes1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cupcake2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cupcake3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cats1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cats2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/cats3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/egg1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/egg2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/egg3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/laptop1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/laptop2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/laptop3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/lightbulb1.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/lightbulb2.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/lightbulb3.png",
+            "https://s3.amazonaws.com/spec-imagehosting/mm/morecats.png"
+        ]
+        let img = new Image()
+        img.onload = () => {
+          if (i + 1 < images.length) this.preload(i + 1)
         }
-        if (i < Slides.length - 1 && !Slides[i + 1].preloaded && Slides[i+1].image) {
-            let img = new Image()
-            img.src = Slides[i + 1].background
-            Slides[i + 1].preloaded = true
-        }
+        img.src = images[i]
+        this.preloaded.push(img)
     }
 
     nextSlide = () => {
         if(this.state.slideCounter < this.maxSlides) {
             this.setState({slideCounter: this.state.slideCounter + 1});
         }
-        this.preload(this.state.slideCounter);
     }
 
     prevSlide = () => {
         if(this.state.slideCounter > 0) {
             this.setState({slideCounter: this.state.slideCounter - 1});
         }
-        this.preload(this.state.slideCounter);
     }
 
     handleKey(e) {

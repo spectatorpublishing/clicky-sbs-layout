@@ -11,7 +11,7 @@ const TextWrapper = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 15%;
+    margin: auto 10%;
     @media (max-width: 700px) {
         margin-left: 5%;
     }
