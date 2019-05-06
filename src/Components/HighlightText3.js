@@ -8,13 +8,11 @@ const Wrapper = styled.div`
 `
 
 const TextWrapper = styled.div`
-    position: relative;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 15%;
-    @media (max-width: 700px) {
-        margin-left: 5%;
-    }
+    margin-left: 5%;
+    z-index: 2;
 `
 
 const Highline = styled.span`
@@ -30,7 +28,22 @@ const Highline = styled.span`
     }
 `
 
-class HighlightText extends Component {
+const Image = styled.img`
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 80%;
+    width: 35%;
+    z-index: 1;
+    @media (max-width: 700px) {
+        width: 70%; 
+        left: 50%;
+        top:70%;       
+    }
+`
+
+
+class HighlightText3 extends Component {
     render() {
         return (
             <Wrapper>
@@ -47,9 +60,10 @@ class HighlightText extends Component {
                     {this.props.text3}
                     </Highline>
                 </TextWrapper>
+                <Image src={this.props.image}/>
             </Wrapper>
         );
     }
 }
 
-export default HighlightText;
+export default HighlightText3;

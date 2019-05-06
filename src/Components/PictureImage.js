@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     width: 100%;
     display: flex;
     height: 98%;
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         display: block;
     }
 `
@@ -15,7 +15,7 @@ const Left = styled.div`
     width: 52%;
     height: 100%;
     z-index: 5;
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         width: 90vw;
         margin-left: 5vw;
         height: 50%;
@@ -26,10 +26,11 @@ const Right = styled.div`
     width: 48%;
     height: 100%;
     z-index: 5;
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         width: 90vw;
         margin-left: 5vw;
         height: 50%;
+        margin-top: -5%;
     }
 `
 
@@ -40,7 +41,7 @@ const Image = styled.img`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         width: 100%;
         margin: 0;
         top: 70%;
@@ -51,7 +52,7 @@ const Text = styled.div`
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
         width: 100%;
     }
 `
@@ -59,14 +60,14 @@ const Text = styled.div`
 const UpperText = styled.div`
     display: block;
     width: 100%;
-    font-size: 14rem;
-    height: 14rem;
+    font-size: 9rem;
+    height: 9rem;
     font-family: "Raleway";
     text-align: center;
     color: white;
-    @media (max-width: 700px) {
-        font-size: 4rem;
-        height: 4rem;
+    @media (max-width: 900px) {
+        font-size: 5rem;
+        height: 5rem;
     }
 `
 
@@ -74,14 +75,14 @@ const LowerText = styled.div`
     margin-top: 5%;
     display: block;
     width: 100%;
-    font-size: 8rem;
-    height: 8rem;
+    font-size: 6rem;
+    height: 6rem;
     font-family: "Raleway";
     text-align: center;
     color: white;
-    @media (max-width: 700px) {
-        font-size: 2rem;
-        height: 2rem;
+    @media (max-width: 900px) {
+        font-size: 3rem;
+        height: 3rem;
     }
 `
 

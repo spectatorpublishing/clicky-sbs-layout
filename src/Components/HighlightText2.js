@@ -5,15 +5,18 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     background-color: #a5e8e7;
     height: 100vh;
+    width: 100%;
 `
 
 const TextWrapper = styled.div`
-    position: relative;
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    margin-left: 15%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%,-50%);
+    text-align: center;
     @media (max-width: 700px) {
-        margin-left: 5%;
+        width: 90%;
     }
 `
 
@@ -26,11 +29,11 @@ const Highline = styled.span`
     font-weight: 650;
     font-size: 6rem;
     @media (max-width: 700px) {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 `
 
-class HighlightText extends Component {
+class HighlightText2 extends Component {
     render() {
         return (
             <Wrapper>
@@ -42,14 +45,10 @@ class HighlightText extends Component {
                     <Highline>
                     {this.props.text2}
                     </Highline>
-                    <br></br>
-                    <Highline>
-                    {this.props.text3}
-                    </Highline>
                 </TextWrapper>
             </Wrapper>
         );
     }
 }
 
-export default HighlightText;
+export default HighlightText2;

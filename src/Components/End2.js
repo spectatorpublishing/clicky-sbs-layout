@@ -11,21 +11,34 @@ const Position = styled.div`
     width: 80%;
     height: 15rem;
     text-align:center;
-    font-size: 4rem;
+    font-size: 2rem;
+    overflow: hidden;
     @media (max-width: 700px) {
-        font-size: 2rem;
+        font-size: 1.6rem;
         width: 90%;
     }
 `
-const Larger = styled.div`
-    font-size: 6rem;
+const Larger = styled.a`
+    font-size: 3rem;
+    color: #99DDDE;
+    text-decoration: none;
     @media (max-width: 700px) {
-        font-size: 3rem;
+        line-height: 1.6rem;
+        font-size: 1.6rem;
+    }
+    &:hover{
+        color: #99DDDE;
+    }
+    &:visited{
+        color: #99DDDE;
     }
 `
 const TextDiv=styled.div`
-    display:inline;
     color:white;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 `
 const Image = styled.img`
     width: 50%;
@@ -40,14 +53,18 @@ const Image = styled.img`
     }
 `
 
-class TextPage2 extends Component{
+class End2 extends Component{
     render(){
         return(
             <div>
                 <Image src={this.props.image}/>
-                <Position><TextDiv><i>{this.props.text1}</i><br/><Larger><i>{this.props.text2}</i></Larger></TextDiv></Position>
+                <Position>
+                    <TextDiv><i>{this.props.text1}</i></TextDiv>
+                    <TextDiv><i><Larger href="www.manhattanministorage.com/students">www.manhattanministorage.com/students</Larger></i></TextDiv>
+                    <TextDiv><i>{this.props.text2}</i></TextDiv>
+                </Position>
             </div>
         )
     }
 }
-export default TextPage2;
+export default End2;

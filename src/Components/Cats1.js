@@ -4,27 +4,25 @@ import styled from 'styled-components';
 const Position = styled.div`
     position: absolute;
     margin: auto;
-    top: 0;
+    top: 15%;
     right: 0;
     bottom: 0;
     left: 0;
-    width: 80%;
-    height: 15rem;
-    text-align:center;
-    font-size: 6rem;
+    width: 40%;
+    text-align:left;
+    font-size: 2.5rem;
     @media (max-width: 700px) {
-        font-size: 3rem;
+        font-size: 1.8rem;
         width: 90%;
     }
 `
+
 const TextDiv=styled.div`
     display:inline;
-    font-weight:700;
-    background-color:white;
-    color:#004D8C;
+    color:white;
 `
 const Image = styled.img`
-    width: 50%;
+    width: 100%;
     position: absolute;
     margin: auto;
     top: 50%;
@@ -32,19 +30,20 @@ const Image = styled.img`
     height: auto;
     transform: translate(-50%, -50%);
     @media (max-width: 700px) {
-        width: 90%; 
-        top:65%;       
+        width: 200%;  
+        left: 0;
+        top: 70%;
     }
 `
 
-class TextPage1 extends Component{
+class Cats extends Component{
     render(){
         return(
             <div>
                 <Image src={this.props.image}/>
-                <Position><TextDiv>{this.props.text1}<br/>{this.props.text2}</TextDiv></Position>
+                <Position><TextDiv><i>{this.props.text1}</i></TextDiv></Position>
             </div>
         )
     }
 }
-export default TextPage1;
+export default Cats;

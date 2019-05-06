@@ -64,7 +64,7 @@ const UpperText = styled.div`
     text-align: center;
     color: #004D8C;
     @media (max-width: 700px) {
-        font-size: 4rem;
+        font-size: 3.3rem;
     }
 `
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const BackBar=styled.div`
-    background-color: grey;
+    background-color: #0D2742;
     vertical-align: bottom;
     height:2%;
     width:100%;
@@ -10,7 +10,7 @@ const BackBar=styled.div`
     bottom:0
 `
 const ProgressBar=styled.div`
-    background-color: yellow;
+    background-color: #44A7F8;
     vertical-align: bottom;
     height:2%;
     width:${props => props.width}vw;
@@ -20,7 +20,7 @@ const ProgressBar=styled.div`
 `
 
 const Div=styled.div`
-    position: relative;
+    position: absolute;
     height:100vh;
 `
 
