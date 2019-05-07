@@ -22,6 +22,7 @@ const Larger = styled.a`
     font-size: 3rem;
     color: #99DDDE;
     text-decoration: none;
+    z-index: 20;
     @media (max-width: 700px) {
         line-height: 1.6rem;
         font-size: 1.6rem;
